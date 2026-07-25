@@ -3,6 +3,8 @@ import Sidebar from "./components/layout/Sidebar";
 import TopBar from "./components/layout/TopBar";
 import LoginPage from "./pages/auth/LoginPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import PatientRegisterPage from "./pages/patients/PatientRegisterPage";
+import PatientSearchPage from "./pages/patients/PatientSearchPage";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -25,6 +27,10 @@ export default function App() {
     switch (page) {
       case "dashboard":
         return <DashboardPage navigate={navigate} />;
+      case "patient-search":
+        return <PatientSearchPage navigate={navigate} />;
+      case "patient-register":
+        return <PatientRegisterPage navigate={navigate} />;
       default:
         return <DashboardPage navigate={navigate} />;
     }
