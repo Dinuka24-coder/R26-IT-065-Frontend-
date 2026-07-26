@@ -4,8 +4,10 @@ import TopBar from "./components/layout/TopBar";
 import LoginPage from "./pages/auth/LoginPage";
 import CTScanResultsPage from "./pages/ct/CTScanResultsPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import HistoryPage from "./pages/history/HistoryPage";
 import PatientRegisterPage from "./pages/patients/PatientRegisterPage";
 import PatientSearchPage from "./pages/patients/PatientSearchPage";
+import ReportsPage from "./pages/reports/ReportsPage";
 import UploadPage from "./pages/xray/UploadPage";
 import XrayOptionsPage from "./pages/xray/XrayOptionsPage";
 import XrayResultsPage from "./pages/xray/XrayResultsPage";
@@ -47,6 +49,10 @@ export default function App() {
         return <UploadPage navigate={navigate} disease="lung-cancer" mode="ct" />;
       case "ct-results":
         return <CTScanResultsPage navigate={navigate} />;
+      case "history":
+        return <HistoryPage navigate={navigate} />;
+      case "reports":
+        return <ReportsPage navigate={navigate} />;
       default:
         return <DashboardPage navigate={navigate} />;
     }
