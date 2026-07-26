@@ -2,6 +2,7 @@ import { useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
 import TopBar from "./components/layout/TopBar";
 import LoginPage from "./pages/auth/LoginPage";
+import CTScanResultsPage from "./pages/ct/CTScanResultsPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
 import PatientRegisterPage from "./pages/patients/PatientRegisterPage";
 import PatientSearchPage from "./pages/patients/PatientSearchPage";
@@ -42,6 +43,10 @@ export default function App() {
         return <UploadPage navigate={navigate} disease={disease} mode="xray" />;
       case "xray-results":
         return <XrayResultsPage navigate={navigate} disease={disease} />;
+      case "ct-upload":
+        return <UploadPage navigate={navigate} disease="lung-cancer" mode="ct" />;
+      case "ct-results":
+        return <CTScanResultsPage navigate={navigate} />;
       default:
         return <DashboardPage navigate={navigate} />;
     }
