@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
 import TopBar from "./components/layout/TopBar";
+
+import AdminPage from "./pages/admin/AdminPage";
 import LoginPage from "./pages/auth/LoginPage";
 import CTScanResultsPage from "./pages/ct/CTScanResultsPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
@@ -53,6 +55,9 @@ export default function App() {
         return <HistoryPage navigate={navigate} />;
       case "reports":
         return <ReportsPage navigate={navigate} />;
+      case "admin":
+        if (user.role !== "Admin") return <DashboardPage navigate={navigate} />;
+        return <AdminPage navigate={navigate} />;
       default:
         return <DashboardPage navigate={navigate} />;
     }
